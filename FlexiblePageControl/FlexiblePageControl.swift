@@ -367,7 +367,12 @@ private class ItemView: UIView {
         dotView.center = CGPoint(x: itemSize/2, y: itemSize/2)
         dotView.backgroundColor = dotColor
         dotView.layer.cornerRadius = dotSize/2
-        dotView.layer.masksToBounds = true
+//        dotView.layer.masksToBounds = true
+//        个人详情页面，点击进入详细视频时，右边的切换点 换成白的。未选中点的参数为50% FFFFFF ／  整个控件的添加投影， 参数为X 0， Y 2  ，blur 8 色值 30% 000000
+        dotView.layer.shadowColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+        dotView.layer.shadowOffset = CGSize.init(width: 0, height: 1)
+        dotView.layer.shadowRadius = 2.0
+        dotView.layer.shadowOpacity = 2.0
         
         addSubview(dotView)
     }
